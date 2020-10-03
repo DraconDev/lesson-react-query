@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Ships from "./components/Ships";
+import Planets from "./components/Planets";
+import Buttons from "./components/Buttons";
+import { ReactQueryDevtools } from "react-query-devtools";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const development =
+		!process.env.NODE_ENV || process.env.NODE_ENV === "development";
+		
+	return (
+		<div className="App">
+			<Buttons></Buttons>
+			Ships
+			<Ships></Ships>
+			<br />
+			Planets
+			<Planets></Planets>
+			{development && <ReactQueryDevtools initialIsOpen={false} />}
+		</div>
+	);
 }
 
 export default App;
