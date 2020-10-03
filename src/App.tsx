@@ -8,7 +8,7 @@ import { ReactQueryDevtools } from "react-query-devtools";
 function App() {
 	const development =
 		!process.env.NODE_ENV || process.env.NODE_ENV === "development";
-		
+
 	return (
 		<div className="App">
 			<Buttons></Buttons>
